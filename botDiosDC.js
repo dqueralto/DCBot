@@ -1,13 +1,14 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
 const config = require("./config.json");
-//const args = message.content.slice(prefix.length).trim().split(/ +/g);
-//const command = args.shift().toLowerCase();
-
+const func = require("./funciones.js");
+const bot = new Discord.Client();
 
 
 var token = config.token;
 var prefix = config.prefix;
+
+
+
 
 
 
@@ -38,62 +39,24 @@ bot.on("message", (message) => {
 
     } else{
         if(message.member.roles.has(rol.id)) {
-        //message.channel.send('Si tienes el rol: `'+rol.name+'`.');
-
-            if (command ===  "del") 
-            {
-                try{
-                    let cantidad = parseInt(args[0]);
-                    message.channel.bulkDelete(cantidad);
-                }catch(err){
-                    console.log(err+"\nInserte el numeró de lineas a borrar");
-                }
-            }
-            if (command ===  "mut") 
-            {
-                try{
-                    let cantidad = parseInt(args[0]);
-                    message.channel.bulkDelete(cantidad);
-                }catch(err){
-                    console.log(err+"\n ");
-                }
-            }
-
-
+            //message.channel.send('Si tienes el rol: `'+rol.name+'`.');
+            func.gestionChats(message,args,command); 
+            func.gestionUsuarios(message,args,command); 
 
         } else {
-        //message.channel.send('No tienes el rol: `'+rol.name+'`.');
+            //message.channel.send('No tienes el rol: `'+rol.name+'`.');
 
-            if (command ==  "ping") {
-                message.channel.send("pong!");
-            } else
-            if (command ==  "hola") {
-                message.channel.send("Hola que tal?");
-            }else
-            if (command ==  "bien") {
-                message.channel.send("Me alegro por ti");
-            }else
-            if (command ==  "mal") {
-                message.channel.send("Pues te jodes");
-            }
-
-
-
+            func.charleta(message,command);
         };
     };
-
-
-
-
-
 
 
 });
 
 //Controlador de errores
-client.on("error", (e) => console.error(e));
-client.on("warn", (e) => console.warn(e));
-client.on("debug", (e) => console.info(e));
+bot.on("error", (e) => console.error(e));
+bot.on("warn", (e) => console.warn(e));
+bot.on("debug", (e) => console.info(e));
 
 
 bot.login(token);

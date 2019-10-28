@@ -1,3 +1,5 @@
+const func = require("./funciones.js");
+
 module.exports = {
     gestionUsuarios: function(ms,args,comando)
     {
@@ -19,13 +21,13 @@ module.exports = {
                 break;
 
             case "mt"://muteo
-                this.borrado(ms,0);
-                this.mute(ms,true);
+                func.borrado(ms,0);
+                func.mute(ms,true);
                 break;   
 
             case "dmt"://desmuteo
-                this.borrado(ms,0);
-                this.mute(ms,false);
+                func.borrado(ms,0);
+                func.mute(ms,false);
                 break;   
 
             default:

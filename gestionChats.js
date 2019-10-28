@@ -1,4 +1,5 @@
 const cnv = require("./conversaciones.js");
+const func = require("./funciones.js");
 
 module.exports = {
     

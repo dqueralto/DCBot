@@ -12,10 +12,6 @@ var token = config.token;
 var prefix = config.prefix;
 
 
-
-
-
-
 bot.on('ready', () => {
     console.log("Conectado como "+bot.user.tag);
     bot.user.setActivity("ser Dios");

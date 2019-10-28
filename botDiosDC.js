@@ -1,6 +1,10 @@
 const Discord = require('discord.js');
 const config = require("./config.json");
 const func = require("./funciones.js");
+const gc = require("./gestionChats.js");
+const gu = require("./gestionUsusarios.js");
+const cnv = require("./conversaciones.js");
+
 const bot = new Discord.Client();
 
 
@@ -40,13 +44,13 @@ bot.on("message", (message) => {
     } else{
         if(message.member.roles.has(rol.id)) {
             //message.channel.send('Si tienes el rol: `'+rol.name+'`.');
-            func.gestionChats(message,args,command); 
-            func.gestionUsuarios(message,args,command); 
+            gc.gestionChats(message,args,command); 
+            gu.gestionUsuarios(message,args,command); 
 
         } else {
             //message.channel.send('No tienes el rol: `'+rol.name+'`.');
 
-            func.charleta(message,command);
+            cnv.charleta(message,command);
         };
     };
 

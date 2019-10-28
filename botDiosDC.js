@@ -10,6 +10,7 @@ const bot = new Discord.Client();
 
 var token = config.token;
 var prefix = config.prefix;
+var idAdmin = config.IdOwner;
 
 
 bot.on('ready', () => {
@@ -49,6 +50,10 @@ bot.on("message", (message) => {
             cnv.charleta(message,command);
         };
     };
+
+
+    //let admin = message.author.id.find(i => i.id === idAdmin)
+
 
 
 });

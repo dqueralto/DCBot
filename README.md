@@ -11,6 +11,7 @@ https://discordapp.com/developers/docs/intro
 
 ## Guias
 https://mybot-team.github.io/documentacion/guia/uso-de-roles.html
+  
 https://portalmybot.com/guia/mybot/uso-roles
 
 

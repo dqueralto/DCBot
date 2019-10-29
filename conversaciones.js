@@ -1,3 +1,5 @@
+const func = require("./funciones.js");
+
 module.exports = {
     charleta: function (ms,comando) 
     {

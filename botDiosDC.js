@@ -32,7 +32,11 @@ bot.on("message", (message) => {
     //separamos el comando de los argumentos y del prefijo
     const args = message.content.slice(prefix.length).trim().split(/ +/g); 
     const command = args.shift().toLowerCase();
-    
+    const activador = message.content.substr(prefix.length);
+    if (activador === prefix) 
+    {
+        ms.channel.send(activador);
+    }
 
     let rol = message.guild.roles.find(r => r.name === "DIOS");//rastreamos el rol "DIOS" (el rol deseado)
     if(!rol) {

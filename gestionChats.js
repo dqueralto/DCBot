@@ -7,12 +7,12 @@ module.exports = {
     {
         switch (comando) {
             case "del"://borra un numero de filas del chat de texto
-                func.borrado(ms,args[0])//pasamos el primer argumento que es el nº de mendajes a borrar
+                this.borrado(ms,args[0])//pasamos el primer argumento que es el nº de mendajes a borrar
                 break;
 
             case "ms"://el bot dice algo por ti a alguien
                     try{
-                        func.borrado(ms,0);
+                        this.borrado(ms,0);
                         let usuario = ms.mentions.members.first();
                         let mensaje = args.join(" ");
                         ms.channel.send(`**${usuario.username}**, ${mensaje}`);
@@ -23,7 +23,7 @@ module.exports = {
 
             case "msp"://manda mensajes privados mediante el bot
                     try{
-                        func.borrado(ms,0);
+                        this.borrado(ms,0);
                         let usuario = ms.mentions.members.first();
                         if(!usuario) return ms.channel.send(`indica un usuario.`);
 
@@ -40,6 +40,15 @@ module.exports = {
             default:
                 cnv.charleta(ms,comando);
                 break;
+        }
+    },
+    
+    borrado: function(ms,args=1){
+        try{
+            let cantidad = parseInt(args)+1;
+            ms.channel.bulkDelete(cantidad);
+        }catch(err){
+            console.log(err+"\nInserte el numeró de lineas a borrar");
         }
     }
 }

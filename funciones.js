@@ -1,32 +1,78 @@
 module.exports = {
     
-    mute:function(ms,estado) {
-        try{
-            let miembro = ms.mentions.members.first();
-            let nombrerol = "Muteado";
-
-            let role = ms.guild.roles.find(r => r.name === nombrerol);
-            let perms = ms.member.hasPermission("MANAGE_ROLES");
-
-            if(!perms) return ms.channel.send("No tienes permisos suficientes, para agregar roles.");
-            if(!miembro) return ms.reply('Debe mencionar a un miembro.');
-            if(!role) return ms.channel.send('Rol no encontrado en el servidor.');
-
-            miembro.removeRole(role).catch(console.error);
-            miembro.setMute(estado);
-            
-        }catch(err){
-            console.log(err.stack);
-        }
-    },
+    numRanmdom:function(min,max)
+    {
+        return Math.random()*(max-min)+min;
+    },    
     
-    borrado: function(ms,args=1){
-        try{
-            let cantidad = parseInt(args)+1;
-            ms.channel.bulkDelete(cantidad);
-        }catch(err){
-            console.log(err+"\nInserte el numeró de lineas a borrar");
+    numRanmdomInt:function(min,max)
+    {
+        return Math.floor(Math.random()*((max+1)-min)+min);
+    },
+
+    //Operaciones-----------------------------------------
+    suma:function(array)
+    {
+        let total = 0.0;
+        array.forEach(element => {
+            total += element;
+        });
+        return total;
+    },
+
+    resta:function(array)
+    {
+        let total = 0.0;
+        array.forEach(element => {
+            total -= element;
+        });
+        return total;
+    },
+
+    multiplicar:function(array)
+    {
+        let total = 1;
+        array.forEach(element => {
+          total = total * element;
+        });
+        return total;
+        
+    },
+
+    devidir:function(dividendo,divisor)
+    {
+        let resultado = dividendo/divisor;
+        if(resultado > 0)
+        {
+            return resultado;
+        }else
+        {
+            return -1;
         }
+
+    },
+    resto:function(dividendo,divisor)
+    {
+        return dividendo%divisor;
+    },
+
+    calcPotencia:function(x,y)
+    {
+        return Math.pow(x,y);
+    },
+
+    ecuSegGrado:function(a,b,c)
+    {
+        let res = new array();
+        res.push( (-b) +(Math.sqrt((Math.pow(b,2) - (4*a*c))))/(2*a) );
+        res.push( (-b) -(Math.sqrt((Math.pow(b,2) - (4*a*c))))/(2*a) );
+        return res;
+    },
+
+    //Cadenas-----------------------------------------
+    ordenarArry:function(array)
+    {
+        return array.sort( (a, b) => a - b );
     }
 
 
@@ -34,4 +80,13 @@ module.exports = {
 
 
 
+
+
+
+
 };
+
+
+
+
+

@@ -40,7 +40,7 @@ bot.on("message", (message) => {
     const command = args.shift().toLowerCase();
     const activador = message.content.substr(0,1);
     
-    if (message.author.id = myId) 
+    if (message.author.avatar === myId) 
     {
         if (activador === pc) 
         {

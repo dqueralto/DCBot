@@ -6,8 +6,8 @@ module.exports = {
     {
         var mensaje = ms.content.slice(1);
         
-        if (mensaje ==  "ping") {
-            ms.channel.send("pong!");
+        if (mensaje ==  "") {
+            ms.channel.send("¿Dime?!");
         } else
         if (mensaje ==  "hola") {
             ms.channel.send("Hola, ¿que tal?");

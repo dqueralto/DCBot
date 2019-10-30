@@ -1,18 +1,22 @@
 const func = require("./funciones.js");
 
 module.exports = {
-    charleta: function (ms,comando) 
+
+    charleta: function (ms) 
     {
-        if (comando ==  "ping") {
+        var mensaje = ms.content.slice(1);
+        
+        if (mensaje ==  "ping") {
             ms.channel.send("pong!");
         } else
-        if (comando ==  "hola") {
+        if (mensaje ==  "hola") {
+            
             ms.channel.send("Hola que tal?");
         }else
-        if (comando ==  "bien") {
+        if (mensaje ==  "bien") {
             ms.channel.send("Me alegro por ti");
         }else
-        if (comando ==  "mal") {
+        if (mensaje ==  "mal") {
             ms.channel.send("Pues te jodes");
         }
     }

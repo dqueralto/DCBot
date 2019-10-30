@@ -42,7 +42,7 @@ module.exports = {
                 break;
         }
     },
-    
+
     borrado: function(ms,args=1){
         try{
             let cantidad = parseInt(args)+1;

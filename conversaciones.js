@@ -10,11 +10,16 @@ module.exports = {
             ms.channel.send("pong!");
         } else
         if (mensaje ==  "hola") {
-            
             ms.channel.send("Hola que tal?");
         }else
+        if (mensaje ==  "adios") {
+            ms.channel.send("Adios");
+        }else 
         if (mensaje ==  "bien") {
             ms.channel.send("Me alegro por ti");
+        }else
+        if (mensaje ==  "mal") {
+            ms.channel.send("Pues te jodes");
         }else
         if (mensaje ==  "mal") {
             ms.channel.send("Pues te jodes");

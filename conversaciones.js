@@ -10,7 +10,7 @@ module.exports = {
             ms.channel.send("pong!");
         } else
         if (mensaje ==  "hola") {
-            ms.channel.send("Hola que tal?");
+            ms.channel.send("Hola, ¿que tal?");
         }else
         if (mensaje ==  "adios") {
             ms.channel.send("Adios");
@@ -18,11 +18,11 @@ module.exports = {
         if (mensaje ==  "bien") {
             ms.channel.send("Me alegro por ti");
         }else
-        if (mensaje ==  "mal") {
+        if (mensaje ==  "aqui vamon") {
             ms.channel.send("Pues te jodes");
         }else
-        if (mensaje ==  "mal") {
-            ms.channel.send("Pues te jodes");
+        if (mensaje ==  "hijo de puta") {
+            ms.channel.send("¡Tus muertos!");
         }
     }
 }

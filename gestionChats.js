@@ -38,7 +38,7 @@ module.exports = {
 
 
             default:
-                cnv.charleta(ms,comando);
+                //cnv.charleta(ms);
                 break;
         }
     },
